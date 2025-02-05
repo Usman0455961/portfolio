@@ -7,70 +7,60 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white px-4 py-4 shadow-md">
+    <nav className="bg-bg text-secondary px-4 py-4 shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-3">
           <Image
             src="/icons/pihof.svg"
             alt="Logo"
-            className="h-10"
-            width={40} // Set the width of the image
-            height={40} // Set the height of the image
+            className="h-20 w-auto"
+            width={40}
+            height={40}
           />
-
-          <span className="font-bold text-lg">Pihof Digital</span>
+          <span className="navbar">Pihof Digital</span>
         </div>
 
-        {/* Mobile Hamburger Icon */}
-        <div
-          className="md:hidden"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        {/* Mobile Hamburger Menu */}
+        <div className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-white"
+            className="h-10 w-10 text-secondary cursor-pointer"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </div>
 
-        {/* Navigation Links */}
-        <div
-          className={`md:flex space-x-8 ${
-            menuOpen ? "flex" : "hidden"
-          } `}
-        >
-          <Link href="/" className="text-green-500 hover:text-white transition">
-            Home
-          </Link>
-          <Link
-            href="/services"
-            className="text-white hover:text-green-500 transition"
-          >
-            Services
-          </Link>
-          <Link
-            href="/portfolio"
-            className="text-white hover:text-green-500 transition"
-          >
-            Portfolio
-          </Link>
+        {/* Mobile Navigation Menu (Dropdown) */}
+        <div className={`absolute left-0 top-24 w-full bg-bg transition-all duration-300 ease-in-out ${menuOpen ? "block" : "hidden"} md:hidden`}>
+          <ul className="flex flex-col items-center space-y-4 py-4">
+            <li>
+              <Link href="/" className="navbar hover:text-primary transition">Home</Link>
+            </li>
+            <li>
+              <Link href="/services" className="navbar hover:text-primary transition">Services</Link>
+            </li>
+            <li>
+              <Link href="/portfolio" className="navbar hover:text-primary transition">Portfolio</Link>
+            </li>
+            <li>
+              <Link href="/contact" className="btn btn-primary">Contact Us</Link>
+            </li>
+          </ul>
         </div>
 
-        {/* Contact Us Button */}
-        <Link
-          href="/contact"
-          className="hidden md:inline-block bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition"
-        >
+        {/* Desktop Navigation Menu (Shown by Default on `md:` and Above) */}
+        <div className="hidden md:flex space-x-8">
+          <Link href="/" className="navbar hover:text-primary transition">Home</Link>
+          <Link href="/services" className="navbar hover:text-primary transition">Services</Link>
+          <Link href="/portfolio" className="navbar hover:text-primary transition">Portfolio</Link>
+        </div>
+
+        {/* Contact Us Button (Hidden on Mobile, Shown on `md:` and Above) */}
+        <Link href="/contact" className="sm:hidden md:inline-block btn btn-primary">
           Contact Us
         </Link>
       </div>

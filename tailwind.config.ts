@@ -9,8 +9,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#22c55e",  // Green color
+        secondary: "#ffffff", // White text color
+        bg: "#000000",        // Black background
+      },
+      fontFamily: {
+        navbar: ["Poppins", "sans-serif"],  // Font style for Navbar
+        hero: ["Montserrat", "sans-serif"], // Font style for Hero section
+      },
+      fontSize: {
+        base: "16px",
+        heading: "24px",
+        heroTitle: "48px",  // Large title for Hero section
+        heroSubtitle: "20px",
       },
     },
   },

@@ -19,3 +19,19 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.navbar {
+  @apply font-navbar text-lg font-semibold tracking-wide;
+}
+
+.btn {
+  @apply inline-block px-6 py-3 rounded-lg text-center font-semibold transition;
+}
+
+/* Updated Contact Us Button */
+.btn-primary {
+  @apply bg-primary text-black hover:bg-green-400;
+  font-weight: bold; /* Ensures bold text */
+  border-radius: 8px; /* Matches the rounded look */
+  min-width: 140px; /* Keeps a consistent width */
+}
