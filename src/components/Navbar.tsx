@@ -30,39 +30,77 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </div>
 
         {/* Mobile Navigation Menu (Dropdown) */}
-        <div className={`absolute left-0 top-24 w-full bg-bg transition-all duration-300 ease-in-out ${menuOpen ? "block" : "hidden"} md:hidden`}>
+        <div
+          className={`absolute left-0 top-24 w-full bg-bg transition-all duration-300 ease-in-out ${
+            menuOpen ? "block" : "hidden"
+          } md:hidden`}
+        >
           <ul className="flex flex-col items-center space-y-4 py-4">
             <li>
-              <Link href="/" className="navbar hover:text-primary transition">Home</Link>
+              <Link href="/" className="navbar hover:text-primary transition">
+                Home
+              </Link>
             </li>
             <li>
-              <Link href="/services" className="navbar hover:text-primary transition">Services</Link>
+              <Link
+                href="/services"
+                className="navbar hover:text-primary transition"
+              >
+                Services
+              </Link>
             </li>
             <li>
-              <Link href="/portfolio" className="navbar hover:text-primary transition">Portfolio</Link>
+              <Link
+                href="/portfolio"
+                className="navbar hover:text-primary transition"
+              >
+                Portfolio
+              </Link>
             </li>
             <li>
-              <Link href="/contact" className="btn btn-primary">Contact Us</Link>
+              <Link href="/contact" className="btn btn-primary">
+                Contact Us
+              </Link>
             </li>
           </ul>
         </div>
 
         {/* Desktop Navigation Menu (Shown by Default on `md:` and Above) */}
         <div className="hidden md:flex space-x-8">
-          <Link href="/" className="navbar hover:text-primary transition">Home</Link>
-          <Link href="/services" className="navbar hover:text-primary transition">Services</Link>
-          <Link href="/portfolio" className="navbar hover:text-primary transition">Portfolio</Link>
+          <Link href="/" className="navbar hover:text-primary transition">
+            Home
+          </Link>
+          <Link
+            href="/services"
+            className="navbar hover:text-primary transition"
+          >
+            Services
+          </Link>
+          <Link
+            href="/portfolio"
+            className="navbar hover:text-primary transition"
+          >
+            Portfolio
+          </Link>
         </div>
 
         {/* Contact Us Button (Hidden on Mobile, Shown on `md:` and Above) */}
-        <Link href="/contact" className="sm:hidden md:inline-block btn btn-primary">
-          Contact Us
-        </Link>
+
+        <div className="hidden md:flex">
+          <Link href="/contact" className="btn btn-primary">
+            Contact Us
+          </Link>
+        </div>
       </div>
     </nav>
   );
